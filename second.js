@@ -1,3 +1,4 @@
+//Global Variables
 const countriesList = document.getElementById("countries");
 let countries; // will contain fetched data
 
