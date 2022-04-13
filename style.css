@@ -9,7 +9,7 @@
   }
   h1 {
     text-align: center;
-    color: rgb(40, 114, 44)
+    color: white;
   }
   
   a {
@@ -23,7 +23,9 @@
     width: 600px;
     margin: 10px auto;
     padding: 2rem;
-    background-color: rgba(240, 195, 119, 0.701);
+    background-color: whitesmoke;
+    border:rgba(43, 122, 102, 0.586);
+    border-style:ridge;
     border-radius: 1rem;
   }
 
@@ -64,7 +66,7 @@
     width: 400px;
     margin: 10px auto;
     padding: 2rem;
-    background-color: rgba(219, 190, 131, 0.775);
+    background-color: rgb(245, 201, 119);
     border-radius: 1rem;
     text-align: center;
   }
