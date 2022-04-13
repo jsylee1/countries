@@ -37,7 +37,6 @@ function displayCountryInfo(countryByCca3) {
         return `${currency.name} (${currency.symbol})<br>`;
       })
       .join("");
-
     document.getElementById("region").innerHTML = countryData.region;
     document.getElementById("subregion").innerHTML = countryData.subregion;
     document.querySelector("#flag-container img").src = countryData.flags[0];
