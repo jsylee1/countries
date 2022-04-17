@@ -7,13 +7,15 @@ My index links to the second.js page - my original main.js document was linked t
 
 ### Explain a technical hurdle (something you struggled with) ###
 There were a few technical hurdles that I struggled with on this project. As mentioned, I originally coded the main.js using an older version of the API and then had to update the code to match the new V3.1 - when I did this it took me a while to work out that they had updated the new API to object so I had to change the language and currencies code from:
-`document.getElementById("language").innerHTML = countryData.languages.map(lan => `${lan.name}`);
-    document.getElementById("currencies").innerHTML = countryData.currencies.map(c => `${c.name} (${c.code}) `);
-    `
+
+`document.getElementById("language").innerHTML = countryData.languages.map(lan => ``${lan.name}``);`
+    `document.getElementById("currencies").innerHTML = countryData.currencies.map(c => ``${c.name} (${c.code}) ``);`
+
     to: 
- `document.getElementById("language").innerHTML = Object.values(countryData.languages).map(lan => lan).join(", ");
-    document.getElementById("currencies").innerHTML = Object.keys(countryData.currencies).map(c => {
-        const currency = countryData.currencies[c];`
+
+ `document.getElementById("language").innerHTML = Object.values(countryData.languages).map(lan => lan).join(", ");`
+    `document.getElementById("currencies").innerHTML = Object.keys(countryData.currencies).map(c => {`
+        `const currency = countryData.currencies[c];`
 
 ### Explain some things you learned (something you enjoyed) ###
 I enjoyed solving the errors myself. Sometimes they were not even errors, it was just little details that I wanted to fix for myself. Like putting in commas into the larger numbers when pulling information for "population". This took a while to narrow down my google search but I was very happy when I used toLocaleString("en-US"); to make this work. I learnt how to incorporate .join and also how to host my page live on GitHub, which I think will be really useful to build a portfolio. 
