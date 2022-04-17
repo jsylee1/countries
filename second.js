@@ -14,10 +14,8 @@ fetch("https://restcountries.com/v3/all")
 .catch(err => console.log("Error:", err));
 
 function initialize(countriesData) {
-    console.log(countriesData);
     countries = countriesData;
     let options = "";
-    console.log(countries[0])
     countries.sort((countryOne, countryTwo) => countryOne.name.common.localeCompare(countryTwo.name.common, "en")).forEach(country => options += `<option value="${country.cca3}">${country.name.common}</option>`);
     countriesList.innerHTML = options;
     countriesList.selectedIndex = Math.floor(Math.random()*countriesList.length);
@@ -41,8 +39,16 @@ function displayCountryInfo(countryByCca3) {
     document.getElementById("region").innerHTML = countryData.region;
     document.getElementById("subregion").innerHTML = countryData.subregion;
     document.querySelector("#flag-container img").src = countryData.flags[0];
-    // document.querySelector("#flag-container img").alt = `Flag of ${countryData.name}`;
-    
+    document.querySelector("#flag-container img").alt = `Flag of ${countryData.name}`;
+    document.getElementById("map").innerHTML = `<br> Latitude: ${countryData.latlng[0]}, <br> Longtitude ${countryData.latlng[1]}`;
+    document.getElementById("coord").innerHTML = `<br> (Latitude: ${countryData.latlng[0]}, Longtitude ${countryData.latlng[1]})`;
 
+    const latitude = countryData.latlng[0];
+    const longitude = countryData.latlng[1];
     
+    var map = L.map('map').setView([latitude, longitude], 4);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 }

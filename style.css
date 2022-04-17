@@ -63,10 +63,10 @@
   }
 
   #flight {
-    width: 400px;
+    width: 339px;
     margin: 10px auto;
     padding: 2rem;
-    background-color: rgb(245, 201, 119);
+    background-color: whitesmoke;
     border-radius: 1rem;
     text-align: center;
   }
@@ -74,9 +74,19 @@
   #skyscanner {
     padding: 0.5rem 2rem;
   }
-  @media (max-width: 900px) {
+
+  #coord {
+    font-size: small;
+  }
+  @media 
+  (max-width: 900px) {
     body { font-size: 14px; }
     #main-container { width: 342px; }  
     #flag-container { height: 172px;}  
     #info-container select { font-size: 12px; font-weight: 600; }
   }
+
+  #map { 
+    height: 250px; 
+    margin-top: 2rem;
+}
