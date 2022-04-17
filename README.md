@@ -11,9 +11,9 @@ There were a few technical hurdles that I struggled with on this project. As men
 `document.getElementById("language").innerHTML = countryData.languages.map(lan => ``${lan.name}``);`
     `document.getElementById("currencies").innerHTML = countryData.currencies.map(c => ``${c.name} (${c.code}) ``);`
 
-    to: 
+#### to: ####
 
- `document.getElementById("language").innerHTML = Object.values(countryData.languages).map(lan => lan).join(", ");`
+`document.getElementById("language").innerHTML = Object.values(countryData.languages).map(lan => lan).join(", ");`
     `document.getElementById("currencies").innerHTML = Object.keys(countryData.currencies).map(c => {`
         `const currency = countryData.currencies[c];`
 
