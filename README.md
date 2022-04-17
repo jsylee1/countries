@@ -1,6 +1,7 @@
 # Overview #
-A preliminary single page application that connects users to a country and it's basic information; full name, population, currency, languages, region, flag etc. - with the idea being that it can help generate an idea for a new place to plan a trip
+A [preliminary single page application](https://jsylee1.github.io/countries/) that connects users to a country and it's basic information; full name, population, currency, languages, region, flag etc. - with the idea being that it can help generate an idea for a new place to plan a trip
 Using the REST countries API, and with a random country chosen on each page refresh.
+
 
 ### Walkthrough of the code ###
 My index links to the second.js page - my original main.js document was linked to V2 of the API, when I realised there was a newer version V3.1, I decided to create a new file with the copied code and edited it to pull from the new API, the index.html file is straightforward, and the second.js file starts with the global variables, and then pulls information from the API based on the object selection. I have left the other .js files in this folder to show my learning process, but know that if I was to be sharing this normally, I would have just worked on one file and used the git commit -m "{insert description}" to track my changes. 
