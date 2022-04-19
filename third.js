@@ -1,7 +1,6 @@
 //Global Variables
 const countriesList = document.getElementById("countries");
 let countries; // will contain fetched data
-let map = undefined;
 
 countriesList.addEventListener("change", newCountrySelection);
 
@@ -43,15 +42,11 @@ function displayCountryInfo(countryByCca3) {
     document.querySelector("#flag-container img").alt = `Flag of ${countryData.name}`;
     document.getElementById("map").innerHTML = `<br> Latitude: ${countryData.latlng[0]}, <br> Longtitude ${countryData.latlng[1]}`;
     document.getElementById("coord").innerHTML = `<br> (Latitude: ${countryData.latlng[0]}, Longtitude ${countryData.latlng[1]})`;
-
+    
     const latitude = countryData.latlng[0];
     const longitude = countryData.latlng[1];
     
-    if (map !== undefined && map !== null) {
-        map.remove();
-    }
-    map = L.map('map').setView([latitude, longitude], 5);
-    
+    var map = L.map('map').setView([latitude, longitude], 4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
